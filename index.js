@@ -190,8 +190,8 @@ app.delete('/api/users/:id', (req, res) => {
 });
 
 // Start server
-const server = app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+const server = app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${port}`);
 });
 
 // Handle graceful shutdown
