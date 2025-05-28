@@ -14,9 +14,9 @@ app.use(express.json());
 
 // First connection (without database) to create the database
 const tempConnection = mysql.createConnection({
-  host: process.env.DB_HOST || 'database-1.ckzadomz8hjc.us-east-1.rds.amazonaws.com',
+  host: process.env.DB_HOST || 'mydatabase.ckzadomz8hjc.us-east-1.rds.amazonaws.com',
   user: process.env.DB_USER || 'admin',
-  password: process.env.DB_PASSWORD || 'PrS0sIc4izctHr1eSINh'
+  password: process.env.DB_PASSWORD || 'A1ZAZNtzoZTefJhfqRCm'
 });
 
 tempConnection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'mydatabase'}`, (err) => {
@@ -30,10 +30,10 @@ tempConnection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'my
 
   // Now connect to the target database
   const db = mysql.createConnection({
-    host: process.env.DB_HOST || 'database-1.ckzadomz8hjc.us-east-1.rds.amazonaws.com',
+    host: process.env.DB_HOST || 'mydatabase.ckzadomz8hjc.us-east-1.rds.amazonaws.com',
     user: process.env.DB_USER || 'admin',
-    password: process.env.DB_PASSWORD || 'PrS0sIc4izctHr1eSINh',
-    database: process.env.DB_NAME || 'database-1'
+    password: process.env.DB_PASSWORD || 'A1ZAZNtzoZTefJhfqRCm',
+    database: process.env.DB_NAME || 'mydatabase'
   });
 
   db.connect((err) => {
